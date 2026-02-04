@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Github Repository') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/theshubhamgour/jenkins-tutorial.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Lenadeesh105/Jenkins.git
                 sh 'pwd'
             }
         }        
@@ -38,13 +38,13 @@ pipeline {
         stage('Docker Tag & Push') {
             steps {
                 dir('4-python-jenkins-docker-app') {
-                    withCredentials([usernamePassword(credentialsId: 'theshubhamgour',
+                    withCredentials([usernamePassword(credentialsId: 'lenadeesh',
                                                       passwordVariable: 'DockerhubPassword',
                                                       usernameVariable: 'DockerhubUserName')]) {
                         sh '''
                             echo "$DockerhubPassword" | docker login -u "$DockerhubUserName" --password-stdin
-                            docker tag python-app:latest theshubhamgour/python-app:latest
-                            docker push theshubhamgour/python-app:latest
+                            docker tag python-app:latest lenadeesh/python-app:latest
+                            docker push lenadeesh/python-app:latest
                         '''
                     }
                 }
