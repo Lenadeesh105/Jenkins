@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        APP_NAME = 'theshubhamgour/python-webapp'
+        APP_NAME = 'lenadeesh/python-webapp'
         TAG_VERSION = 'v1.0.0'
-        IMAGE = 'theshubhamgour/python-app:v1'
+        IMAGE = 'lenadeesh/python-app:v1'
     }
     stages {
         stage('Docker Image Pull') {

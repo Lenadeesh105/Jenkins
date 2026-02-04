@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment{
-        DOCKER_IMAGE = 'theshubhamgour/python-app:v1'
-        APP_NAME = 'theshubhamgour/python-webapp'
+        DOCKER_IMAGE = 'lenadeesh/python-app:v1'
+        APP_NAME = 'lenadeesh/python-webapp'
         TAG_VERSION = 'v1.0.1'
     }
     stages {
