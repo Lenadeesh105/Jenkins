@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Github Repository') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/theshubhamgour/jenkins-tutorial.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Lenadeesh105/Jenkins.git'
                 sh 'pwd'
             }
         }
@@ -39,21 +39,21 @@ pipeline {
         stage('Docker image Tag') {
             steps {
                 dir('3-java-jenkins-docker-app') {
-                    sh 'docker tag java-jenkins-docker:latest theshubhamgour/java-jenkins-docker:latest'
+                    sh 'docker tag java-jenkins-docker:latest Lenadeesh105/java-jenkins-docker:latest'
                 }
             }
         }   
         stage('Docker Login ') {
             steps {
                 dir('3-java-jenkins-docker-app') {
-                    sh 'docker login -u theshubhamgour -p redhat123#'
+                    sh 'docker login -u Lenadeesh105 -p redhat123#'
                 }
             }
         }
         stage('Docker Image Push ') {
             steps {
                 dir('3-java-jenkins-docker-app') {
-                    sh 'docker push theshubhamgour/java-jenkins-docker:latest'
+                    sh 'docker push Lenadeesh/java-jenkins-docker:latest'
                 }
             }
         }

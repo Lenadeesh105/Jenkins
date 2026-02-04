@@ -5,3 +5,4 @@ services:
     container_name: java-jenkins-docker
     image: java-jenkins-docker:latest
     command: ["java", "-jar", "app.jar"]
+    
