@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/theshubhamgour/jenkins-tutorial.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Lenadeesh105/Jenkins.git'
 
                 // Run Maven on a Unix agent
                 dir('3-java-jenkins-docker-app') {
@@ -49,9 +49,9 @@ pipeline {
         stage('Docker Push') {
             steps {
                 dir('3-java-jenkins-docker-app') {
-                        sh "docker login -u theshubhamgour -p {password} --stdin"
-                        sh "docker tag java-app theshubhamgour/java-app:latest"
-                        sh "docker push theshubhamgour/java-app:latest"
+                        sh "docker login -u lenadeesh -p {password} --stdin"
+                        sh "docker tag java-app lenadeesh/java-app:latest"
+                        sh "docker push lenadeesh/java-app:latest"
                     }
                 }
             }
